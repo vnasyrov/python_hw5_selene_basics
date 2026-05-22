@@ -1,4 +1,3 @@
-import pytest
 from selene import browser
 
 browser.config.timeout = 2
@@ -11,7 +10,3 @@ def close_modal():
         browser.element('#closeLargeModal').with_(timeout=0.5).click()
     except:
         pass
-
-# def click_and_close_modal(selector):
-#     browser.element(selector).click()
-#     close_modal()
