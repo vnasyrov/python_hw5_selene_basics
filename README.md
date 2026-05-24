@@ -172,7 +172,7 @@ browser.element('#uploadPicture').perform(
 """
 
 # Структура проекта:
-# qaguru_python21_hw5/              <- корень проекта
+# hw5_selene_basics/              <- корень проекта
 # ├── utils.py                      <- сюда кладём функцию path
 # ├── conftest.py                   <- фикстуры
 # ├── tests/
@@ -183,19 +183,19 @@ browser.element('#uploadPicture').perform(
 # utils.py
 def path(file_name):                # file_name - параметр (имя файла передаётся снаружи при вызове)
     return str(
-        Path(__file__).parent               # /qaguru_python21_hw5/ - выходим из файла в папку
+        Path(__file__).parent               # /hw5_selene_basics/ - выходим из файла в папку
                                             # один parent - так как utils.py лежит в корне проекта
         .joinpath(f'resources/{file_name}') # f'resources/{file_name}' - это f-строка
                                             # буква f перед кавычками означает что всё что в {}
                                             # будет заменено на значение параметра file_name
-                                            # например: /qaguru_python21_hw5/resources/1.jpg
+                                            # например: /hw5_selene_basics/resources/1.jpg
     )
 
 # если бы функция лежала в tests/test_demoqa_form.py - нужно два parent
 def path(file_name):
     return str(
-        Path(__file__).parent.parent        # /qaguru_python21_hw5/tests/ -> /qaguru_python21_hw5/
-        .joinpath(f'resources/{file_name}') # /qaguru_python21_hw5/resources/1.jpg
+        Path(__file__).parent.parent        # /hw5_selene_basics/tests/ -> /hw5_selene_basics/
+        .joinpath(f'resources/{file_name}') # /hw5_selene_basics/resources/1.jpg
     )
 
 # используем в тесте test_demoqa_form.py
